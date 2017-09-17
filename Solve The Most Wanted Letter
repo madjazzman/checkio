@@ -1,0 +1,23 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Sep 15 19:07:56 2017
+
+@author: jazz
+"""
+text = "AA a eeeee oo o ooddd! !!!"
+
+a = text.lower(); b = 0; c = []; 
+
+for x in a:
+    if x.isalpha():          #pokud x není mezera nebo znak
+        pis = a.count(x)     #pis = pocet x v a
+        if pis > b:          #je ted vice pismen nez predtim?
+            c += x; b = pis          #navys b + zmen c
+            
+        elif pis == b:       #pro pripad rovnosti vice pismen
+            if x in c:       #pokud uz tam je tak nic
+                pass 
+            else:
+                c.append(x)   #pridej dalsi pismeno na list
+                
+print("vysledek",c)
